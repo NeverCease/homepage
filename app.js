@@ -1,12 +1,5 @@
-/* jshint undef: true, unused: true, esversion: 6, -W098, -W097 */
-/* global require, __dirname, module */
-
-
-
 "use strict";
 
-//
-//  G E T
 //  P A C K A G E S
 
 const
@@ -23,7 +16,6 @@ const
 
 
 
-//
 //  I N I T
 
 const app = express()
@@ -53,38 +45,32 @@ const app = express()
     }
   }))
 
-  // Custom header
   .use((req, res, next) => {
-    res.header("X-Powered-By", "!NC");
-    next();
-  })
+    res.header("X-Powered-By", "!NC"); // Custom header
 
-  // Customization
-  .use((req, res, next) => {
-    const result = {
+    const result = { // Customization
       Title: "Ideas Never Cease",
       Tagline: "Delight, inform, and change the world",
       Description: "Our mission is simple: to delight, inform, and change the world. And then, other worlds."
     };
 
     app.set("result", result);
+
     next();
-  });
+  })
+;
 
 
 
-//
 //  P A R T I A L S
-//
 
 hbsutils.registerPartials(__dirname + "/views/partials");
 hbsutils.registerWatchedPartials(__dirname + "/views/partials");
 
 
 
-//
 //  C O M P A R E
-//  H E L P E R
+//  ~ H E L P E R
 
 // via https://gist.github.com/pheuter/3515945#gistcomment-1378171
 hbs.registerHelper("compare", (lvalue, operator, rvalue, options) => {
@@ -103,59 +89,27 @@ hbs.registerHelper("compare", (lvalue, operator, rvalue, options) => {
   }
 
   operators = {
-    "==": (l, r) => {
-      return l == r;
-    },
-
-    "===": (l, r) => {
-      return l === r;
-    },
-
-    "!=": (l, r) => {
-      return l != r;
-    },
-
-    "!==": (l, r) => {
-      return l !== r;
-    },
-
-    "<": (l, r) => {
-      return l < r;
-    },
-
-    ">": (l, r) => {
-      return l > r;
-    },
-
-    "<=": (l, r) => {
-      return l <= r;
-    },
-
-    ">=": (l, r) => {
-      return l >= r;
-    },
-
-    "typeof": (l, r) => {
-      return typeof l == r;
-    }
+    "==":     (l, r) => l == r,
+    "===":    (l, r) => l === r,
+    "!=":     (l, r) => l != r,
+    "!==":    (l, r) => l !== r,
+    "<":      (l, r) => l < r,
+    ">":      (l, r) => l > r,
+    "<=":     (l, r) => l <= r,
+    ">=":     (l, r) => l >= r,
+    "typeof": (l, r) => typeof l == r
   };
 
-  if (!operators[operator]) {
-    throw new Error("Handlerbars Helper \"compare\" doesn't know the operator " + operator);
-  }
+  if (!operators[operator]) throw new Error(`Handlerbars Helper "compare" does not know the operator ${operator}`);
 
   result = operators[operator](lvalue, rvalue);
 
-  if (result) {
-    return options.fn(this);
-  } else {
-    return options.inverse(this);
-  }
+  if (result) return options.fn(this);
+  else return options.inverse(this);
 });
 
 
 
-//
 //  R O U T E S
 
 const vendoRoutes = require("./routes");
@@ -163,32 +117,27 @@ vendoRoutes(app);
 
 
 
-//
-//  E R R O R   H A N D L I N G
+//  ~     E R R O R
+//  H A N D L I N G
 
 if (typeof String.prototype.contains === "undefined") {
   String.prototype.contains = function (it) {
-    return this.indexOf(it) != -1;
+    return this.indexOf(it) !== -1;
   };
 }
 
 if (typeof Array.prototype.contains === "undefined") {
   Array.prototype.contains = function (it) {
-    for (var i in this) {
-      var elem = this[i].toString();
-
-      if (elem.contains(it)) {
-        return true;
-      }
+    for (const i in this) {
+      const elem = this[i].toString();
+      if (elem.contains(it)) return true;
     }
 
     return false;
   };
 }
 
-app.use((err, req, res, next) => {
-  // console.log(err);
-
+app.use((err, req, res, next) => { // eslint-disable-line
   if (err.stack.contains("Failed to lookup view")) {
     res.render("pages/error", Object.assign({ layout: "layouts/default", error: "This page doesn't exist" }));
   } else {
@@ -198,7 +147,6 @@ app.use((err, req, res, next) => {
 
 
 
-//
 //  B E G I N
 
 module.exports = app;

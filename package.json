@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://paulwebb.software/IdeasNeverCease/INC_Website"
+    "url": "https://git.inc.sh/IdeasNeverCease/Marketing"
   },
   "dependencies": {
     "body-parser": "^1.18.2",

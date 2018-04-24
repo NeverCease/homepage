@@ -1,11 +1,9 @@
-/* jshint undef: true, unused: true, esversion: 6 */
-/* global module */
+"use strict";
 
 
 
 module.exports = (app) => {
 
-  //
   //  H O M E P A G E
 
   app.get("/", (req, res) => {
@@ -16,7 +14,6 @@ module.exports = (app) => {
 
 
 
-  //
   //  P A G E
 
   app.get("/:page", (req, res) => {

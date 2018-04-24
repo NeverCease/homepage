@@ -54,7 +54,7 @@ main {
         @include center;
         height: calc(100vh - 11rem - 35px); // browser height minus main padding and footer
 
-        &:after {
+        &::after {
           width: 100%; height: 100%;
           top: 0; left: 0;
 
