@@ -1,0 +1,37 @@
+{
+  "name": "!NC",
+  "description": "Offical website of Ideas Never Cease",
+  "homepage": "https://inc.sh",
+  "version": "2.0.0",
+  "private": true,
+  "author": {
+    "name": "Paul Anthony Webb",
+    "email": "paul@inc.sh",
+    "url": "https://inc.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://paulwebb.software/IdeasNeverCease/INC_Website"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "express": "^4.16.3",
+    "express-minify-html": "^0.12.0",
+    "hbs": "^4.0.1",
+    "hbs-utils": "0.0.4",
+    "morgan": "^1.9.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  },
+  "scripts": {
+    "deploy": "vagrant push",
+    "sass": "sass --watch sass:public/css --style compressed",
+    "start": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

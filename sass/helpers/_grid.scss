@@ -1,0 +1,131 @@
+.table {
+  margin-bottom: 2rem;
+}
+
+.grid {
+  &:first-of-type {
+    background-color: $silver;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+
+  &:not(:first-of-type) {
+    font-size: 1rem;
+
+    @media (min-width: 801px) {
+      border-left: 1px solid $silver;
+    }
+
+    .col {
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-right-style: solid;
+      border-right-width: 1px;
+
+      @media (max-width: 800px) {
+        border-left-style: solid;
+        border-left-width: 1px;
+
+        &:first-of-type {
+          border-top-style: solid;
+          border-top-width: 1px;
+        }
+      }
+
+      &:last-of-type {
+        border-right-style: solid;
+        border-right-width: 1px;
+      }
+
+      &:not(.active):not(.in-progress):not(.paused) {
+        border-color: $silver;
+      }
+    }
+  }
+}
+
+.col {
+  cursor: default;
+  padding: 0.5rem 1rem;
+  vertical-align: middle;
+  word-break: break-word;
+
+  @media (min-width: 801px) {
+    text-align: center;
+  }
+
+  a {
+    font-weight: 600;
+  }
+
+  &.active {
+    background-color: rgba($brand-green, 0.7);
+    border-color: rgba($brand-green, 0.3);
+  }
+
+  &.in-progress {
+    background-color: rgba($brand-orange, 0.7);
+    border-color: rgba($brand-orange, 0.3);
+  }
+
+  &.paused {
+    background-color: rgba($brand-pink, 0.7);
+    border-color: rgba($brand-pink, 0.3);
+  }
+}
+
+@media (min-width: 801px) {
+  // Add `.grid` for the table
+  .grid {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  // Add `.col` for the table cells, or columns
+  .col {
+    display: table-cell;
+  }
+
+  // Padded columns
+  .grid-padded {
+    margin-right: -1rem;
+    margin-left: -1rem;
+
+    .grid {
+      border-spacing: 1rem 0;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    &:first-of-type {
+      display: none;
+    }
+
+    &:not(:first-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+
+
+// Vertically center grid content
+// Requires content within the column to be inline/inline-block
+.grid-align-middle .col {
+  vertical-align: middle;
+}
+
+
+
+.grid-reverse {
+  direction: rtl;
+
+  .col {
+    direction: ltr;
+  }
+}

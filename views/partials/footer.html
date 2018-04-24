@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="inner-wrap">
+    <small>&copy; Ideas Never Cease, LLC. All Rights Reserved.</small>
+  </div>
+</footer>
+
+<script>
+  $(function () {
+    $("a[href^=http]").each(function () {
+      if (this.href.indexOf(location.hostname) == -1) {
+        $(this).attr("target", "_blank");
+      }
+    });
+  });
+</script>

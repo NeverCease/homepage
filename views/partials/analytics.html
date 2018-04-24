@@ -1,0 +1,17 @@
+<script>
+  "use strict";
+
+  (function () {
+    if (document.location.hostname !== "localhost") {
+      let t = document.createElement("script");
+      t.type = "text/javascript";
+      t.async = true;
+      t.id = "gauges-tracker";
+      t.setAttribute("data-site-id", "53363518eddd5b4019001dd3");
+      t.src = "//secure.gaug.es/track.js";
+
+      let s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(t, s);
+    }
+  })();
+</script>
