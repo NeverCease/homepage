@@ -4,6 +4,7 @@
 
 const
   bodyParser = require("body-parser"),
+  chew = require("chewit"),
   compression = require("compression"),
   cookieParser = require("cookie-parser"),
   express = require("express"),
@@ -58,6 +59,8 @@ const app = express()
 
     next();
   })
+
+  .use(chew("5ae8a853b13869077c37f622"))
 ;
 
 
