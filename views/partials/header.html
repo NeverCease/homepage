@@ -4,12 +4,7 @@
       <a href="/" title="Ideas Never Cease homepage">Ideas Never Cease</a>
     </h1>
 
-    <nav class="header__navigation">
-      <a class="header__navigation__item{{#compare activePage "===" "about" }} active{{/compare }}" href="/about" title="About Ideas Never Cease">About</a>
-      <a class="header__navigation__item{{#compare activePage "===" "projects" }} active{{/compare }}" href="/projects" title="Check out the Projects that Ideas Never Cease is working on!">Projects</a>
-      <a class="header__navigation__item{{#compare activePage "===" "contact" }} active{{/compare }}" href="/contact" title="Have a question? Get the contact info for Ideas Never Cease here">Contact</a>
-      <a class="header__navigation__item" data-toggle="navigation" href="#" title="Toggle navigation menu">Menu</a>
-    </nav>
+    {{> navigation }}
   </div>
 
   <script>

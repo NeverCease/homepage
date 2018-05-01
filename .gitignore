@@ -6,11 +6,13 @@ Thumbs.db
 
 # Folders
 .sass-cache
+.vagrant
+build
 node_modules
-___
 
 
 
 # Files
 *.css.map
 *.lock
+package-lock.json

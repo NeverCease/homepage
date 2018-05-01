@@ -1,7 +1,0 @@
-{
-  "apps" : [{
-    "name"            : "!NC",
-    "script"          : "/var/www/inc/bin/www",
-    "log_date_format" : "YYYY-MM-DD HH:mm Z",
-  }]
-}

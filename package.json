@@ -1,38 +1,39 @@
 {
   "name": "!NC",
   "description": "Offical website of Ideas Never Cease",
-  "homepage": "https://inc.sh",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "private": true,
-  "author": {
-    "name": "Paul Anthony Webb",
-    "email": "paul@inc.sh",
-    "url": "https://inc.sh"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://git.inc.sh/IdeasNeverCease/Marketing"
-  },
   "dependencies": {
     "body-parser": "^1.18.2",
-    "chewit": "^1.0.1",
+    "chalk": "^2.4.1",
+    "chewit": "^1.0.2",
     "compression": "^1.7.2",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
     "express": "^4.16.3",
     "express-minify-html": "^0.12.0",
     "hbs": "^4.0.1",
-    "hbs-utils": "0.0.4",
-    "morgan": "^1.9.0",
-    "serve-favicon": "^2.5.0"
+    "hbs-utils": "0.0.4"
   },
   "devDependencies": {
-    "nodemon": "^1.17.2"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.17.3"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
   },
   "scripts": {
+    "build": "npm run clean && npm install && npm run build-server",
+    "build-server": "babel -d build server",
+    "clean": "rm -rf build package-lock.json && mkdir build",
     "deploy": "vagrant push",
+    "dev": "NODE_ENV=development nodemon server/index.js --exec babel-node --presets env,stage-2",
     "sass": "sass --watch sass:public/css --style compressed",
-    "start": "nodemon ./bin/www",
+    "start": "npm run build && NODE_ENV=production node build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

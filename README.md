@@ -1,5 +1,5 @@
 # INC
 
-[![PWS](https://img.shields.io/badge/PWS-IdeasNeverCease/INC--Website-07d0eb.svg?style=flat-square)](https://paulwebb.software/IdeasNeverCease/INC_Website)
+[![INC](https://img.shields.io/badge/%F0%9F%92%A1-IdeasNeverCease/Marketing-07d0eb.svg?style=flat-square)](https://git.inc.sh/IdeasNeverCease/Marketing)
 
-> Official site of Ideas Never Cease.
+> Official site of Ideas Never Cease
