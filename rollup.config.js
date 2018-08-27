@@ -16,9 +16,7 @@ import { uglify } from "rollup-plugin-uglify";
 export default [
   { // choo
     external: [
-      // "app-root-path",
       "@babel/register",
-      // "@babel/polyfill",
       "choo",
       "choo/html",
       "choo/html/raw",

@@ -58,6 +58,7 @@ export default function head(state, emit) {
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png"/>
     <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml"/>
     <link rel="mask-icon" href="/assets/images/favicon.svg" color="#010000"/>
+    <link rel="shortcut icon" href="/assets/favicon.ico"/>
 
     <link href="//brick.a.ssl.fastly.net/Karla:400,700,400i,700i" rel="stylesheet"/>
     <link href="/assets/bundle.css" rel="stylesheet"/>

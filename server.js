@@ -56,14 +56,3 @@ const start = async () => {
 };
 
 start();
-
-
-
-/*
-//  H E L P E R
-
-function validateEmail(email) {
-  const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\\.,;:\s@"]{2,})$/i;
-  return emailRegex.test(String(email));
-}
-*/
