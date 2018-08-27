@@ -33,10 +33,7 @@ fastify.register(require("fastify-static"), {
 });
 
 fastify.register(require("choo-ssr/fastify"), {
-  app: require("./app"),
-  plugins: [
-    [ require("choo-bundles/ssr"), {} ]
-  ]
+  app: require("./app")
 });
 
 fastify.ready(err => {

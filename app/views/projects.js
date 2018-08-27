@@ -120,7 +120,7 @@ module.exports = exports = () => html`
     </section>
 
     <section class="inner-wrap">
-      <p>There are <strong>plenty more</strong> projects in the works but we want to finish the aforementioned ones before embarking on more. Ideas never cease but you can't ship anything if you keep switching to new things.</p>
+      <p>There is only so much one person with varied interests can do at one time. So, this list shifts a fair bit.</p>
     </section>
   </main>
 `;
