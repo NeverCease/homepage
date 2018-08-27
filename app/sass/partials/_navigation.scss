@@ -1,0 +1,45 @@
+.navigation {
+  background-color: $black;
+  letter-spacing: 0.1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: 601px) {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  @media (max-width: 600px) {
+    overflow: scroll;
+    overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+}
+
+.navigation__item {
+  display: inline-block;
+  vertical-align: top;
+
+  @media (min-width: 601px) {
+    padding: 1rem 1.5rem;
+    transition: all 0.2s;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.2s 0.2s ease, transform 0.4s 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  &:not(:hover):not(.active) {
+    color: $white;
+  }
+
+  &.active,
+  &:hover {
+    background-color: $white;
+    color: $black;
+  }
+}

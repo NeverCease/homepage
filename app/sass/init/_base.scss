@@ -1,0 +1,186 @@
+html {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0; padding: 0;
+
+  box-sizing: inherit;
+  outline: 0 !important;
+}
+
+// Remove touch delay on supported devices
+a, area, button, [role="button"], input, label, select, summary, textarea {
+  touch-action: manipulation;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+*[disabled] {
+  cursor: default;
+}
+
+*[readonly] {
+  cursor: not-allowed;
+}
+
+::-webkit-input-placeholder {
+  color: rgba($black, 0.3);
+}
+
+textarea {
+  &[disabled] {
+    resize: none;
+  }
+
+  &:not[disabled] {
+    resize: vertical;
+  }
+}
+
+button {
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:active {
+    top: 2px;
+  }
+}
+
+button,
+input,
+select,
+textarea {
+  border: none;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: inherit;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+iframe {
+  border: 0;
+}
+
+img {
+  font-size: 0;
+
+  &::after {
+    width: 100%; height: 100%;
+    top: -100%; left: 0;
+
+    background-color: $white;
+    background-image: url("../images/missing.png");
+    background-size: cover;
+    box-shadow: 0 0 1px 0 rgba($black, 0.3);
+    content: "";
+    display: block;
+    position: relative;
+  }
+}
+
+
+
+// Media
+img,
+embed,
+object,
+audio,
+video {
+  max-width: 100%; height: auto;
+}
+
+// Table
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+}
+
+
+
+@media print {
+  // Intelligent print styles
+  pre, blockquote { border: 1px solid $gray !important; page-break-inside: avoid !important; }
+  tr, img { page-break-inside: avoid !important; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm !important; }
+  p, h2, h3 { orphans: 3 !important; widows: 3 !important; }
+  h2, h3 { page-break-after: avoid !important; }
+  thead { display: table-header-group !important; }
+
+  // Faster, more stable printing
+  * { background: transparent !important; color: $black !important; text-shadow: none !important; filter: none !important; }
+
+  // Show hypertext data for links and abbreviations
+  p {
+    a,
+    abbr {
+      text-decoration: underline !important;
+      word-wrap: break-word !important;
+    }
+
+    a[href^="javascript:"]::after,
+    a[href^="#"]::after {
+      content: "" !important;
+    }
+
+    a[href]::after {
+      content: " (" attr(href) ")" !important;
+    }
+
+    abbr[title]::after {
+      content: " (" attr(title) ")" !important;
+    }
+  }
+}
+
+
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+  display: none;
+}
+
+// Get rid of yellow autofill background
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px $white inset !important;
+
+  &:focus {
+    outline: none;
+  }
+}

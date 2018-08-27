@@ -1,0 +1,124 @@
+.grid {
+  &:first-of-type {
+    background-color: rgba($gray, 0.3);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+  }
+
+  &:not(:first-of-type) {
+    font-size: 1rem;
+
+    @media (min-width: 801px) {
+      border-left: 1px solid rgba($gray, 0.3);
+    }
+
+    @media (max-width: 800px) {
+      .col {
+        border-left-style: solid;
+        border-left-width: 1px;
+
+        &:first-of-type {
+          border-top-style: solid;
+          border-top-width: 1px;
+        }
+
+        &:last-of-type {
+          border-right-style: solid;
+          border-right-width: 1px;
+        }
+      }
+    }
+
+    .col {
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      border-right-style: solid;
+      border-right-width: 1px;
+
+      &:not(.active):not(.in-progress):not(.paused) {
+        border-color: rgba($gray, 0.3);
+      }
+    }
+  }
+}
+
+.col {
+  cursor: default;
+  padding: 0.5rem 1rem;
+  vertical-align: middle;
+  word-break: break-word;
+
+  @media (min-width: 801px) {
+    text-align: center;
+  }
+
+  &.active {
+    background-color: rgba($green, 0.7);
+    border-color: rgba($green, 0.3);
+  }
+
+  &.in-progress {
+    background-color: rgba($orange, 0.7);
+    border-color: rgba($orange, 0.3);
+  }
+
+  &.paused {
+    background-color: rgba($pink, 0.7);
+    border-color: rgba($pink, 0.3);
+  }
+
+  a {
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 801px) {
+  .grid {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+  }
+
+  .col {
+    display: table-cell;
+  }
+
+  .grid-padded {
+    margin-right: -1rem;
+    margin-left: -1rem;
+
+    .grid {
+      border-spacing: 1rem 0;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    &:first-of-type {
+      display: none;
+    }
+
+    &:not(:first-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.grid-align-middle .col {
+  vertical-align: middle;
+}
+
+.grid-reverse {
+  direction: rtl;
+
+  .col {
+    direction: ltr;
+  }
+}
+
+.table {
+  margin-bottom: 2rem;
+}
