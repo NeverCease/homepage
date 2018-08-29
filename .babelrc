@@ -13,7 +13,6 @@
     "@babel/syntax-import-meta"
   ],
   "ignore": [
-    "rollup.config.js",
     "app/dist/*.js"
   ]
 }

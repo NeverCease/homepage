@@ -2,19 +2,19 @@
 
 
 
-//  P A C K A G E S
+//  P A C K A G E
 
 import html from "choo/html";
 
 //  V A R I A B L E
 
-let title = "Ideas Never Cease";
+let title = "";
 
 
 
 //  E X P O R T
 
-export default function head(state, emit) {
+module.exports = exports = (state, emit) => {
   if (state.route !== "/" && state.params.wildcard) title = `${state.params.wildcard.capitalize()} ∙ Ideas Never Cease`;
   else title = "Ideas Never Cease";
 
@@ -34,7 +34,7 @@ export default function head(state, emit) {
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="author" content="Paul Anthony Webb"/>
-    <meta name="description" content="Ideas Never Cease (!NC) is a holding company for whatever comes into the mind of Paul Anthony Webb."/>
+    <meta name="description" content="Ideas Never Cease (!NC) is a one-man shop for all things neat and Internet. Run by Paul Anthony Webb, it began as a company to house his ideas."/>
     <meta name="keywords" content="!nc, ideas, inc, never cease"/>
     <meta name="title" content="Ideas Never Cease"/>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -42,7 +42,7 @@ export default function head(state, emit) {
     <!--/ Open Graph /-->
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Ideas Never Cease"/>
-    <meta property="og:url" content="url"/>
+    <meta property="og:url" content="https://inc.sh${state.href}"/>
     <meta property="og:site_name" content="Ideas Never Cease"/>
     <meta property="og:image" content="/assets/images/apple-touch-icon.png"/>
     <meta property="og:locale" content="en_US"/>
@@ -62,15 +62,13 @@ export default function head(state, emit) {
 
     <link href="//brick.a.ssl.fastly.net/Karla:400,700,400i,700i" rel="stylesheet"/>
     <link href="/assets/bundle.css" rel="stylesheet"/>
-
-    <script src="/assets/bundle.js"></script>
   `;
-}
+};
 
 
 
 //  H E L P E R
 
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };

@@ -75,6 +75,7 @@ main {
 }
 
 figure {
+  background-image: radial-gradient(circle, $cyan 0%, $blue 100%);
   margin-bottom: 2rem;
   position: relative;
 
@@ -113,32 +114,6 @@ ul {
 
 ul {
   padding-left: 1.3rem;
-
-  sup {
-    cursor: default;
-    font-size: 0.5rem;
-    letter-spacing: 0.15rem;
-    line-height: 0;
-    padding: 0.5rem;
-    position: relative;
-    text-transform: uppercase;
-    top: 0.25rem;
-
-    &.active {
-      background-color: $green;
-      color: $white;
-    }
-
-    &.paused {
-      background-color: $orange;
-      color: $white;
-    }
-
-    &.progress {
-      background-color: $pink;
-      color: $white;
-    }
-  }
 
   li {
     margin-bottom: 1rem;

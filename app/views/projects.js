@@ -2,16 +2,142 @@
 
 
 
-//  P A C K A G E
+//  P A C K A G E S
 
 import html from "choo/html";
+import raw from "choo/html/raw";
+
+//  V A R I A B L E
+
+const projects = [
+  {
+    description: "Ad network for !NC, to be open-sourced later",
+    name: "Ad Network",
+    status: "Paused",
+    url: "",
+    urlTitle: ""
+  },
+  {
+    description: "Default web browser for hikari",
+    name: "Aries",
+    status: "Paused",
+    url: "https://git.inc.sh/hikari/Aries",
+    urlTitle: "Source code for Aries Browser"
+  },
+  {
+    description: "A domain portfolio management tool",
+    name: "Beachfront",
+    status: "Progressing",
+    url: "https://beachfront.digital",
+    urlTitle: "Sign up for BeachfrontDigital's beta!"
+  },
+  {
+    description: "No configuration process management for servers",
+    name: "Brisk",
+    status: "Ideation",
+    url: "",
+    urlTitle: ""
+  },
+  {
+    description: "Analytics you can count on",
+    name: "Chew",
+    status: "Progressing",
+    url: "https://chew.sh",
+    urlTitle: "Sign up for Chew's alpha!"
+  },
+  {
+    description: "Design Services for the Good Natured",
+    name: "DSGN",
+    status: "Active",
+    url: "https://dsgn.io",
+    urlTitle: "The design studio behind everything !NC designs"
+  },
+  {
+    description: "Music production and releases",
+    name: "FRSH×BTS",
+    status: "Paused",
+    url: "https://thewibby.bandcamp.com",
+    urlTitle: "Check out my music!"
+  },
+  {
+    description: "Open-source operating system",
+    name: "hikari",
+    status: "Paused",
+    url: "https://hikar.io",
+    urlTitle: "This operating system passion project was inspired by Megaman Battle Network"
+  },
+  {
+    description: "Content Management System",
+    name: "Noto",
+    status: "Paused",
+    url: "",
+    urlTitle: ""
+  },
+  {
+    description: "IMAP client",
+    name: "Pidge",
+    status: "Progressing",
+    url: "",
+    urlTitle: ""
+  },
+  {
+    description: "A better social network, focused on users' privacy and security",
+    name: "Socii",
+    status: "Progressing",
+    url: "https://socii.network",
+    urlTitle: "I got tired of dealing with Big Social so I made an alternative"
+  },
+  {
+    description: "eCommerce platform",
+    name: "VendoMarket",
+    status: "Paused",
+    url: "",
+    urlTitle: ""
+  },
+  {
+    description: "Our founder's fantastic blog",
+    name: "theWebb.blog",
+    status: "Active",
+    url: "https://thewebb.blog",
+    urlTitle: "Musings and rants by The Most Fantabulous"
+  },
+  {
+    description: "Space-centric lifestyle brand",
+    name: "WEÖM",
+    status: "Paused",
+    url: "https://weom.space",
+    urlTitle: "Wisdom Escapes Ordinary Minds is a dope brand, and our snapback is super popular"
+  }
+];
 
 
 
 //  E X P O R T
 
-module.exports = exports = () => html`
-  <main>
+module.exports = exports = () => {
+  const renderedProjects = [];
+
+  for (const project of projects) {
+    let projectUrl = html`&mdash;`;
+
+    if (project.url)
+      projectUrl = html`
+        <a href="${project.url}" title="${project.urlTitle}">
+          ${project.url.replace("https://", "")}
+        </a>
+      `;
+
+    renderedProjects.push(html`
+      <div class="grid">
+        <div class="col">${project.name}</div>
+        <div class="col">${project.description}</div>
+        <div class="col">${projectUrl}</div>
+        <div class="col ${project.status.toLowerCase()}">${project.status}</div>
+      </div>
+    `);
+  }
+
+  return html`
     <section class="table inner-wrap">
       <div class="grid">
         <div class="col">Project Name</div>
@@ -20,107 +146,11 @@ module.exports = exports = () => html`
         <div class="col">Status</div>
       </div>
 
-      <div class="grid">
-        <div class="col">Ad Network</div>
-        <div class="col">Ad network for !NC, to be open-sourced later</div>
-        <div class="col">&mdash;</div>
-        <div class="col paused">Paused</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">Aries</div>
-        <div class="col">Default browser for hikari</div>
-        <div class="col"><a href="https://git.inc.sh/hikari/Aries" title="Source code for Aries Browser">git.inc.sh/hikari/Aries</a></div>
-        <div class="col paused">Paused</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">BeachfrontDigital</div>
-        <div class="col">A domain portfolio management tool</div>
-        <div class="col"><a href="https://beachfront.digital" title="Sign up for BeachfrontDigital's beta!">beachfront.digital</a></div>
-        <div class="col in-progress">In Progress</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">Brisk</div>
-        <div class="col">No configuration process management for servers</div>
-        <div class="col">&mdash;</div>
-        <div class="col in-progress">In Progress</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">Chew</div>
-        <div class="col">Analytics you can count on</div>
-        <div class="col"><a href="https://chew.sh" title="Sign up for Chew's alpha!">chew.sh</a></div>
-        <div class="col in-progress">In Progress</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">DSGN</div>
-        <div class="col">Design Services for the Good Natured</div>
-        <div class="col"><a href="https://dsgn.io" title="The design studio behind everything !NC designs">dsgn.io</a></div>
-        <div class="col active">Active</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">FRSH&times;BTS</div>
-        <div class="col">Music production and releases</div>
-        <div class="col"><a href="https://thewibby.bandcamp.com" title="Check out my music!">thewibby.bandcamp.com</a></div>
-        <div class="col paused">Paused</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">hikari</div>
-        <div class="col">Open-source operating system</div>
-        <div class="col"><a href="https://hikar.io" title="This operating system passion project was inspired by Megaman Battle Network">hikar.io</a></div>
-        <div class="col paused">Paused</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">Noto</div>
-        <div class="col">Content Management System</div>
-        <div class="col">&mdash;</div>
-        <div class="col paused">Paused</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">Pidge</div>
-        <div class="col">IMAP client</div>
-        <div class="col">&mdash;</div>
-        <div class="col in-progress">In Progress</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">Socii</div>
-        <div class="col">A better social network, focused on users' privacy and security</div>
-        <div class="col"><a href="https://socii.network" title="I got tired of dealing with Big Social so I made a better alternative">socii.network</a></div>
-        <div class="col in-progress">In Progress</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">VendoMarket</div>
-        <div class="col">eCommerce platform</div>
-        <div class="col">&mdash;</div>
-        <div class="col paused">Paused</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">theWebb.blog</div>
-        <div class="col">Our founder's fantastic blog</div>
-        <div class="col"><a href="https://thewebb.blog" title="I should write more, but you can check out what I've written thus far!">thewebb.blog</a></div>
-        <div class="col active">Active</div>
-      </div>
-
-      <div class="grid">
-        <div class="col">WEÖM</div>
-        <div class="col">Space-centric lifestyle brand</div>
-        <div class="col"><a href="https://weom.space" title="Wisdom Escapes Ordinary Minds is a dope brand, buy that sweet snapback!">weom.space</a></div>
-        <div class="col paused">Paused</div>
-      </div>
+      ${raw(renderedProjects.join(""))}
     </section>
 
     <section class="inner-wrap">
       <p>There is only so much one person with varied interests can do at one time. So, this list shifts a fair bit.</p>
     </section>
-  </main>
-`;
+  `;
+};

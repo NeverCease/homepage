@@ -64,6 +64,13 @@ export default class Navigation extends Nanocomponent {
         ${this.state.links.map(this.renderLink)}
         <a class="header__navigation__item" data-toggle="navigation" href="#" title="Toggle navigation menu">Menu</a>
       </nav>
+
+      <script>
+        document.querySelector("[data-toggle='navigation']").addEventListener("click", event => {
+          event.preventDefault();
+          document.querySelector(".header__navigation").classList.toggle("active");
+        });
+      </script>
     `;
   }
 

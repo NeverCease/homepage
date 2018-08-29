@@ -8,7 +8,7 @@ import html from "choo/html";
 
 //  V A R I A B L E S
 
-import head from "./head";
+import footer from "./footer";
 import Navigation from "./navigation";
 
 const navigation = new Navigation();
@@ -17,29 +17,29 @@ const navigation = new Navigation();
 
 //  E X P O R T
 
-export default function wrapper(view) {
-  return (state, emit) => {
-    // TODO: add body class based on `state.params.href | state.href`
-    // console.log(state.href);
+module.exports = exports = children => (state, emit) => {
+  const route = state.href.split("/")[1];
+  let contentClass = "";
 
-    return html`
-      <head>
-        ${head(state, emit)}
-      </head>
+  // Dynamically add class based on viewed page
+  if (route !== undefined) contentClass = ` class=${route}`;
+  else contentClass = " class=homepage";
 
-      <body>
-        <header class="header">
-          <div class="inner-wrap">
-            <h1 class="header__logo">
-              <a href="/" title="Ideas Never Cease homepage">Ideas Never Cease</a>
-            </h1>
+  return html`
+    <header class="header">
+      <div class="inner-wrap">
+        <h1 class="header__logo">
+          <a href="/" title="Ideas Never Cease homepage">Ideas Never Cease</a>
+        </h1>
 
-            ${navigation.render({ href: state.href || "/" })}
-          </div>
-        </header>
+        ${navigation.render({ href: state.href || "/" })}
+      </div>
+    </header>
 
-        ${view(state, emit)}
-      </body>
-    `;
-  };
-}
+    <main${contentClass}>
+      ${children(state, emit)}
+    </main>
+
+    ${footer(state, emit)}
+  `;
+};
