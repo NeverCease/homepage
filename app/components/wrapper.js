@@ -4,7 +4,7 @@
 
 //  P A C K A G E
 
-import html from "choo/html";
+import asyncHtml from "choo-async/html";
 
 //  V A R I A B L E S
 
@@ -25,7 +25,7 @@ module.exports = exports = children => (state, emit) => {
   if (route !== undefined) contentClass = ` class=${route}`;
   else contentClass = " class=homepage";
 
-  return html`
+  return asyncHtml`
     <header class="header">
       <div class="inner-wrap">
         <h1 class="header__logo">
