@@ -5,14 +5,14 @@
 //  P A C K A G E S
 
 import html from "choo/html";
-import Nanocomponent from "nanocomponent";
+import Component from "choo/component";
 import xtend from "xtend";
 
 
 
 //  E X P O R T
 
-export default class Navigation extends Nanocomponent {
+export default class Navigation extends Component {
   constructor() {
     super();
 

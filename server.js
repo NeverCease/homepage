@@ -13,13 +13,13 @@ const fastify = require("fastify")({
   }
 });
 
-//  V A R I A B L E
-
-const log = console.log; // eslint-disable-line
-
 
 
 //  P R O G R A M
+
+fastify.register(require("chewit/fastify"), {
+  id: "5b88ddc225acf0538d8d4079"
+});
 
 fastify.register(require("fastify-compress"));
 
@@ -52,7 +52,7 @@ const start = async () => {
     process.exit(1);
   }
 
-  log(`\n— ${color.green("⚡")} ${fastify.server.address().port}\n`);
+  process.stdout.write(`\n— ${color.green("⚡")} ${fastify.server.address().port}\n\n`);
 };
 
 start();
