@@ -50,7 +50,7 @@
   "scripts": {
     "css": "sass --update app/sass:app/dist --style compressed",
     "deploy": "vagrant push",
-    "start": "npm run css && NODE_ENV=production node server",
+    "start": "npm i && npm run css && NODE_ENV=production node server",
     "test": "run-s test:*",
     "test:dependencies": "updates --update ./",
     "test:lint": "standardx --verbose | snazzy",
