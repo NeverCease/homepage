@@ -18,7 +18,7 @@ const fastify = require("fastify")({
 //  P R O G R A M
 
 fastify.register(require("chewit/fastify"), {
-  id: "5b88ddc225acf0538d8d4079"
+  id: "5ae8a853b13869077c37f622"
 });
 
 fastify.register(require("fastify-compress"));
