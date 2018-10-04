@@ -22,9 +22,8 @@ module.exports = exports = (state, emit) => { // eslint-disable-line
       const links = document.querySelectorAll("a[href]");
 
       for (const link of links) {
-        if (link.href.indexOf(location.hostname) === -1) {
+        if (link.href.indexOf(location.hostname) === -1)
           link.target = "_blank";
-        }
       }
     </script>
   `;

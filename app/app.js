@@ -8,12 +8,13 @@ import async from "choo-async";
 import asyncHtml from "choo-async/html";
 import choo from "choo";
 import devtools from "choo-devtools";
+import { require as local } from "app-root-path";
 import ssr from "choo-ssr";
 
 //  V A R I A B L E S
 
-import head from "./components/head";
-import wrapper from "./components/wrapper";
+const head = local("app/components/head");
+const wrapper = local("app/components/wrapper");
 
 
 

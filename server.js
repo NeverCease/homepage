@@ -17,24 +17,21 @@ const fastify = require("fastify")({
 
 //  P R O G R A M
 
-fastify.register(require("chewit/fastify"), {
-  id: "5ae8a853b13869077c37f622"
-});
-
-fastify.register(require("fastify-compress"));
-
-fastify.register(require("fastify-helmet"), {
-  hidePoweredBy: { setTo: "!NC" }
-});
-
-fastify.register(require("fastify-static"), {
-  root: `${__dirname}/app/dist/`,
-  prefix: "/assets/"
-});
-
-fastify.register(require("choo-ssr/fastify"), {
-  app: require("./app")
-});
+fastify
+  .register(require("chewit/fastify"), {
+    id: "5ae8a853b13869077c37f622"
+  })
+  .register(require("fastify-compress"))
+  .register(require("fastify-helmet"), {
+    hidePoweredBy: { setTo: "!NC" }
+  })
+  .register(require("fastify-static"), {
+    root: `${__dirname}/app/dist/`,
+    prefix: "/assets/"
+  })
+  .register(require("choo-ssr/fastify"), {
+    app: require("./app")
+  });
 
 fastify.ready(err => {
   if (err) throw err;
