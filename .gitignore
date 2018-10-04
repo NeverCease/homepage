@@ -6,6 +6,7 @@ Thumbs.db
 
 # Files
 .env
+*.css
 *.css.map
 *.lock
 package-lock.json
