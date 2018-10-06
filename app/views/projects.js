@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 //  P A C K A G E S
 
 import html from "choo/html";
@@ -117,6 +119,8 @@ const projects = [
       "Wisdom Escapes Ordinary Minds is a dope brand, and our snapback is super popular"
   }
 ];
+
+
 
 //  E X P O R T
 

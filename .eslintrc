@@ -1,11 +1,3 @@
 {
-  "extends": [
-    "prettier",
-    "@inc"
-  ],
-  "rules": {
-    "no-multiple-empty-lines": [
-      "error", { "max": 3, "maxEOF": 1 }
-    ]
-  }
+  extends: "@inc"
 }

@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 //  P A C K A G E
 
 import html from "choo/html";
@@ -7,6 +9,8 @@ import html from "choo/html";
 //  V A R I A B L E
 
 let title = "";
+
+
 
 //  E X P O R T
 
@@ -28,9 +32,7 @@ export default (state, emit) => {
 
   return html`
     <meta charset="utf-8"/>
-    <title>${
-      newMetadata && newMetadata.title ? newMetadata.title : title
-    }</title>
+    <title>${newMetadata && newMetadata.title ? newMetadata.title : title}</title>
 
     <!--/ IDEAS NEVER CEASE
     //////// 01101001 01101110 01100011
@@ -38,11 +40,7 @@ export default (state, emit) => {
 
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="author" content="Paul Anthony Webb"/>
-    <meta name="description" content="${
-      newMetadata && newMetadata.description
-        ? newMetadata.description
-        : "Ideas Never Cease (!NC) is a one-man shop for all things neat and Internet. Run by Paul Anthony Webb, it began as a company to house his ideas."
-    }"/>
+    <meta name="description" content="${newMetadata && newMetadata.description ? newMetadata.description : "Ideas Never Cease (!NC) is a one-man shop for all things neat and Internet. Run by Paul Anthony Webb, it began as a company to house his ideas."}"/>
     <meta name="keywords" content="!nc, ideas, inc, never cease"/>
     <meta name="title" content="Ideas Never Cease"/>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -51,9 +49,7 @@ export default (state, emit) => {
     <meta property="og:image" content="/assets/images/apple-touch-icon.png"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="og:site_name" content="Ideas Never Cease"/>
-    <meta property="og:title" content="${
-      newMetadata && newMetadata.title ? newMetadata.title : title
-    }"/>
+    <meta property="og:title" content="${newMetadata && newMetadata.title ? newMetadata.title : title}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://inc.sh${state.href}"/>
 
@@ -74,6 +70,8 @@ export default (state, emit) => {
     <link href="/assets/bundle.css" rel="stylesheet"/>
   `;
 };
+
+
 
 //  H E L P E R
 
