@@ -4,7 +4,7 @@
 
 //  P A C K A G E
 
-import html from "choo/html"
+import html from "choo/html";
 
 
 
