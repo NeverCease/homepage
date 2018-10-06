@@ -51,7 +51,7 @@
   "homepage": "https://inc.sh",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test:lint && npm run format && npm run test:sass"
+      "pre-commit": "npm run format && npm run test:sass"
     }
   },
   "main": "server.js",
