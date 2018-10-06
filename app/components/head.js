@@ -17,11 +17,11 @@ let title = "";
 export default (state, emit) => {
   switch (true) {
     case state.route !== "/" && state.params.wildcard:
-      title = `${state.params.wildcard.capitalize()} ∙ Ideas Never Cease`;
+      title = `${state.params.wildcard.capitalize()} ∙ Ideas Never Cease ∙ Helping to make the 'Net a better place to be`;
       break;
 
     default:
-      title = "Ideas Never Cease";
+      title = "Ideas Never Cease ∙ Helping to make the 'Net a better place to be";
       break;
   }
 
@@ -46,7 +46,9 @@ export default (state, emit) => {
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
 
     <!--/ Open Graph /-->
-    <meta property="og:image" content="/assets/images/apple-touch-icon.png"/>
+    <meta property="og:image" content="/assets/media/images/og-image.png"/>
+    <meta property="og:image:height" content="720"/>
+    <meta property="og:image:width" content="1280"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="og:site_name" content="Ideas Never Cease"/>
     <meta property="og:title" content="${newMetadata && newMetadata.title ? newMetadata.title : title}"/>
