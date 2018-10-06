@@ -41,7 +41,7 @@ fastify.ready(err => {
 
 //  B E G I N
 
-const start = async () => {
+const start = async() => {
   try {
     await fastify.listen(process.env.PORT || 3003, process.env.IP || "0.0.0.0");
   } catch (err) {
