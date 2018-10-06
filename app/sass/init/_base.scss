@@ -1,6 +1,11 @@
+// sass-lint:disable no-important
+
 html {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 *,
@@ -12,9 +17,16 @@ html {
   outline: 0 !important;
 }
 
-// Remove touch delay on supported devices
-a, area, button, [role="button"], input, label, select, summary, textarea {
-  touch-action: manipulation;
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation; // Remove touch delay on supported devices
 }
 
 a {
@@ -30,27 +42,19 @@ a {
   cursor: not-allowed;
 }
 
-::-webkit-input-placeholder {
-  color: rgba($black, 0.3);
-}
-
 textarea {
-  &[disabled] {
-    resize: none;
+  &:not([disabled]) {
+    resize: vertical;
   }
 
-  &:not[disabled] {
-    resize: vertical;
+  &[disabled] {
+    resize: none;
   }
 }
 
 button {
   &:not(:disabled) {
     cursor: pointer;
-  }
-
-  &:active {
-    top: 2px;
   }
 }
 
@@ -77,20 +81,13 @@ textarea {
   background-color: transparent;
 }
 
-input[type=submit] {
+[type="button"],
+[type="submit"] {
   cursor: pointer;
 }
 
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
 iframe {
-  border: 0;
+  border: none;
 }
 
 img {
@@ -101,7 +98,7 @@ img {
     top: -100%; left: 0;
 
     background-color: $white;
-    background-image: url("../images/missing.png");
+    background-image: url("/assets/media/images/missing.png");
     background-size: cover;
     box-shadow: 0 0 1px 0 rgba($black, 0.3);
     content: "";
@@ -127,49 +124,78 @@ table {
   border-spacing: 0;
 }
 
-td,
-th {
-}
-
-
-
 @media print {
   // Intelligent print styles
-  pre, blockquote { border: 1px solid $gray !important; page-break-inside: avoid !important; }
-  tr, img { page-break-inside: avoid !important; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm !important; }
-  p, h2, h3 { orphans: 3 !important; widows: 3 !important; }
-  h2, h3 { page-break-after: avoid !important; }
-  thead { display: table-header-group !important; }
+  pre,
+  blockquote {
+    border: 1px solid #999 !important;
+    page-break-inside: avoid !important;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid !important;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
 
   // Faster, more stable printing
-  * { background: transparent !important; color: $black !important; text-shadow: none !important; filter: none !important; }
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
 
-  // Show hypertext data for links and abbreviations
   p {
+    a {
+      &[href]::after { // Show hypertext data for links and abbreviations
+        content: " (" attr(href) ")" !important;
+      }
+
+      &[href^="javascript:"],
+      &[href^="#"] {
+        &::after {
+          content: "" !important;
+        }
+      }
+    }
+
+    abbr {
+      &[title]::after {
+        content: " (" attr(title) ")" !important;
+      }
+    }
+
     a,
     abbr {
       text-decoration: underline !important;
       word-wrap: break-word !important;
     }
-
-    a[href^="javascript:"]::after,
-    a[href^="#"]::after {
-      content: "" !important;
-    }
-
-    a[href]::after {
-      content: " (" attr(href) ")" !important;
-    }
-
-    abbr[title]::after {
-      content: " (" attr(title) ")" !important;
-    }
   }
 }
-
-
 
 input::-moz-focus-inner,
 button::-moz-focus-inner {
@@ -183,4 +209,8 @@ input:-webkit-autofill {
   &:focus {
     outline: none;
   }
+}
+
+::-webkit-input-placeholder {
+  color: rgba($black, 0.3);
 }

@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 //  P A C K A G E S
 
 import html from "choo/html";
@@ -32,7 +30,7 @@ const projects = [
     urlTitle: "Sign up for BeachfrontDigital's beta!"
   },
   {
-    description: "No configuration process management for servers",
+    description: "Simple web app deployment",
     name: "Brisk",
     status: "Ideation",
     url: "",
@@ -64,7 +62,15 @@ const projects = [
     name: "hikari",
     status: "Paused",
     url: "https://hikar.io",
-    urlTitle: "This operating system passion project was inspired by Megaman Battle Network"
+    urlTitle:
+      "This operating system passion project was inspired by Megaman Battle Network"
+  },
+  {
+    description: "No configuration process management for servers",
+    name: "Honk",
+    status: "Ideation",
+    url: "",
+    urlTitle: ""
   },
   {
     description: "Content Management System",
@@ -81,7 +87,8 @@ const projects = [
     urlTitle: ""
   },
   {
-    description: "A better social network, focused on users' privacy and security",
+    description:
+      "A better social network, focused on users' privacy and security",
     name: "Socii",
     status: "Progressing",
     url: "https://socii.network",
@@ -106,11 +113,10 @@ const projects = [
     name: "WEÖM",
     status: "Paused",
     url: "https://weom.space",
-    urlTitle: "Wisdom Escapes Ordinary Minds is a dope brand, and our snapback is super popular"
+    urlTitle:
+      "Wisdom Escapes Ordinary Minds is a dope brand, and our snapback is super popular"
   }
 ];
-
-
 
 //  E X P O R T
 

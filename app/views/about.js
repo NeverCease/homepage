@@ -1,19 +1,15 @@
 "use strict";
 
-
-
 //  P A C K A G E
 
 import html from "choo/html";
-
-
 
 //  E X P O R T
 
 module.exports = exports = () => html`
   <section class="inner-wrap">
     <figure>
-      <img src="/assets/images/yung-sun.jpg" alt="Yung Sun(flower)"/>
+      <img src="/assets/media/images/yung-sun.jpg" alt="Yung Sun(flower)"/>
     </figure>
 
     <p>Ideas Never Cease (!NC) is a one-man shop for all things neat and Internet. Run by Paul Anthony Webb, it began as a company to house his ideas. It remains as such but [REDACTED] things are happening...</p>

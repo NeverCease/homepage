@@ -1,4 +1,6 @@
 .footer {
+  width: 100%;
+  padding: 0.5rem 1rem;
   bottom: 0; left: 0;
 
   background-color: $black;
@@ -6,8 +8,6 @@
   cursor: default;
   font-size: 1rem;
   letter-spacing: 0.05rem;
-  padding: 0.5rem 1rem;
   position: fixed;
   text-align: center;
-  width: 100%;
 }

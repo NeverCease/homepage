@@ -1,23 +1,18 @@
 "use strict";
 
-
-
-//  P A C K A G E
+//  P A C K A G E S
 
 import asyncHtml from "choo-async/html";
+import { require as local } from "app-root-path";
 
 //  V A R I A B L E S
 
-import footer from "./footer";
-import Navigation from "./navigation";
-
-const navigation = new Navigation();
-
-
+const footer = local("app/components/footer").default;
+const navigation = local("app/components/navigation").default;
 
 //  E X P O R T
 
-module.exports = exports = children => (state, emit) => {
+export default children => (state, emit) => {
   const route = state.href.split("/")[1];
   let contentClass = "";
 
@@ -32,7 +27,7 @@ module.exports = exports = children => (state, emit) => {
           <a href="/" title="Ideas Never Cease homepage">Ideas Never Cease</a>
         </h1>
 
-        ${navigation.render({ href: state.href || "/" })}
+        ${navigation(state.href)}
       </div>
     </header>
 
@@ -40,6 +35,6 @@ module.exports = exports = children => (state, emit) => {
       ${children(state, emit)}
     </main>
 
-    ${footer(state, emit)}
+    ${footer()}
   `;
 };

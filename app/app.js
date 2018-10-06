@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 //  P A C K A G E S
 
 import async from "choo-async";
@@ -13,10 +11,8 @@ import ssr from "choo-ssr";
 
 //  V A R I A B L E S
 
-const head = local("app/components/head");
-const wrapper = local("app/components/wrapper");
-
-
+const head = local("app/components/head").default;
+const wrapper = local("app/components/wrapper").default;
 
 //  P R O G R A M
 
@@ -25,15 +21,8 @@ function main() {
 
   if (process.env.NODE_ENV !== "production") app.use(devtools());
 
-  const page = view => (
-    shell(
-      ssr.head(
-        head,
-        ssr.state()
-      ),
-      ssr.body(wrapper(view))
-    )
-  );
+  const page = view =>
+    shell(ssr.head(head, ssr.state()), ssr.body(wrapper(view)));
 
   app.use(ssr());
 
@@ -47,17 +36,13 @@ function main() {
 
 if (typeof window !== "undefined") main();
 
-
-
 //  E X P O R T
 
 module.exports = exports = main;
 
-
-
 //  H E L P E R
 
-function shell (head, body) {
+function shell(head, body) {
   return (state, emit) => {
     const bodyPromise = Promise.resolve(body(state, emit));
     const headPromise = bodyPromise.then(() => head(state, emit)); // resolve `head` once `body` is resolved

@@ -1,3 +1,6 @@
 {
-  "extends": "@inc"
+  "extends": [
+    "prettier",
+    "@inc"
+  ]
 }
