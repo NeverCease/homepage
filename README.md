@@ -1,5 +1,32 @@
-# INC
+# minimal-hacker-news
 
-[![INC](https://img.shields.io/badge/%F0%9F%92%A1-IdeasNeverCease/Marketing-07d0eb.svg?style=flat-square)](https://git.inc.sh/IdeasNeverCease/Marketing)
+Sample project using [composi](https://github.com/composi/composi), forked from [hacker-news-minimal](https://github.com/composi/examples/tree/master/2-complex%20projects/hacker-news-minimal).
 
-> Official site of Ideas Never Cease
+
+
+### Differences from the original repo
+
+- updated dependencies to latest versions
+- added scripts for linting and checking dependency versions
+
+
+
+### Installation
+
+```bash
+npm i
+```
+
+
+
+### Build
+
+```bash
+npm run build
+```
+
+
+
+### Notes
+
+The `build` command will open this project in your default web browser.

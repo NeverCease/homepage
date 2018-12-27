@@ -14,4 +14,4 @@ Viewers like you
 /* SITE */
 
 Standards: CSS3, HTML5, JavaScript (ES5/6/7)
-Components: chew, fastify, Sass
+Components: Composi, Gulp, Rollup, Sass

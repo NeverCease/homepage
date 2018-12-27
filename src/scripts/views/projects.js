@@ -2,12 +2,11 @@
 
 
 
-//  P A C K A G E S
+//  I M P O R T
 
-import html from "choo/html";
-import raw from "choo/html/raw";
+import { h } from "@composi/core";
 
-//  V A R I A B L E
+//  U T I L
 
 const projects = [
   {
@@ -124,43 +123,49 @@ const projects = [
 
 //  E X P O R T
 
-module.exports = exports = () => {
-  const renderedProjects = [];
+export default function() {
+  return (<RenderProjects />);
+}
 
-  for (const project of projects) {
-    let projectUrl = html`&mdash;`;
 
-    if (project.url)
-      projectUrl = html`
-        <a href="${project.url}" title="${project.urlTitle}">
-          ${project.url.replace("https://", "")}
-        </a>
-      `;
 
-    renderedProjects.push(html`
+//  H E L P E R
+
+function RenderProjects() {
+  const projectItems = projects.map(project => {
+    return (
       <div class="grid">
-        <div class="col">${project.name}</div>
-        <div class="col">${project.description}</div>
-        <div class="col">${projectUrl}</div>
-        <div class="col ${project.status.toLowerCase()}">${project.status}</div>
+        <div class="col">{project.name}</div>
+        <div class="col">{project.description}</div>
+        <div class="col">
+          {project.urlTitle ?
+            <a href={(project.url)} title={(project.urlTitle)}>
+              {project.url.replace("https://", "")}
+            </a> :
+            "—"
+          }
+        </div>
+        <div class={"col" + (" " + project.status.toLowerCase())}>{project.status}</div>
       </div>
-    `);
-  }
+    );
+  });
 
-  return html`
-    <section class="table inner-wrap">
-      <div class="grid">
-        <div class="col">Project Name</div>
-        <div class="col">Description</div>
-        <div class="col">URL</div>
-        <div class="col">Status</div>
-      </div>
+  return (
+    <span>
+      <section class="table inner-wrap">
+        <div class="grid">
+          <div class="col">Project Name</div>
+          <div class="col">Description</div>
+          <div class="col">URL</div>
+          <div class="col">Status</div>
+        </div>
 
-      ${raw(renderedProjects.join(""))}
-    </section>
+        {projectItems}
+      </section>
 
-    <section class="inner-wrap">
-      <p>There is only so much one person with varied interests can do at one time. So, this list shifts a fair bit.</p>
-    </section>
-  `;
-};
+      <section class="inner-wrap">
+        <p>There is only so much one person with varied interests can do at one time. So, this list shifts a fair bit.</p>
+      </section>
+    </span>
+  );
+}
