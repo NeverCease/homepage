@@ -4,13 +4,13 @@
 
 > Official site of Ideas Never Cease
 
+
+
 ### Installation
 
 ```bash
 npm i
 ```
-
-
 
 ### Build
 
