@@ -1,0 +1,15 @@
+{
+  "background_color": "#fff",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "apple-touch-icon.png",
+      "type": "image/png"
+    }
+  ],
+  "name": "Ideas Never Cease",
+  "short_name": "!NC",
+  "start_url": "/",
+  "theme_color": "#010000"
+}

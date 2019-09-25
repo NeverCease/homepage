@@ -1,8 +1,11 @@
-# OS garbage
+# Files
 .DS_Store
+yarn-error.log
 Thumbs.db
 
 # Folders
-dist
+__sapper__
+cypress/screenshots
 node_modules
-production
+src/node_modules/@sapper
+

@@ -1,76 +1,84 @@
 {
+  "_moduleAliases": {
+    "~component": "src/components",
+    "~root": ".",
+    "~store": "src/stores",
+    "~util": "src/utils"
+  },
   "author": {
     "email": "paul@inc.sh",
     "name": "Paul Anthony Webb"
   },
   "dependencies": {
-    "connect-history-api-fallback": "^1.5.0"
+    "compression": "^1.7.4",
+    "polka": "next",
+    "sirv": "^0.4.2"
   },
-  "description": "Offical website of Ideas Never Cease",
+  "description": "Homepage of Ideas Never Cease",
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-transform-parameters": "^7.2.0",
-    "@babel/plugin-transform-react-jsx": "^7.2.0",
-    "@babel/preset-env": "^7.2.3",
-    "@composi/core": "^1.1.4",
-    "@composi/datastore": "^1.2.5",
-    "@composi/fragment": "^1.0.4",
-    "@composi/idb": "^1.0.2",
-    "@composi/router": "^0.5.2",
-    "@composi/styler": "^1.0.4",
-    "@inc/eslint-config": "^1.1.2",
-    "@inc/sasslint-config": "^1.1.2",
-    "babel-eslint": "^10.0.1",
-    "browser-sync": "^2.26.3",
-    "eslint": "^5.11.0",
-    "eslint-plugin-react": "^7.11.1",
-    "gulp": "^4.0.0",
-    "gulp-clean": "^0.4.0",
-    "gulp-gzip": "^1.4.2",
-    "husky": "^1.3.0",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@inc/eslint-config": "^2019.7.23",
+    "@inc/sasslint-config": "^2019.7.23",
+    "@inc/uchu": "^2019.9.1-1.2",
+    "cypress": "^3.4.1",
+    "eslint": "^6.4.0",
+    "husky": "^3.0.5",
+    "link-module-alias": "^1.2.0",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^2.6.2",
-    "rollup": "^0.68.2",
-    "rollup-plugin-babel": "^4.1.0",
-    "rollup-plugin-babel-minify": "^6.2.0",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-resolve": "0.0.1-predev.1",
-    "sass": "^1.15.2",
-    "sass-lint": "^1.12.1",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-svelte": "^5.1.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "sapper": "^0.27.9",
+    "sass": "^1.23.0-module.beta.1",
+    "sass-lint": "^1.13.1",
     "snazzy": "^8.0.0",
-    "standardx": "^3.0.1",
-    "updates": "^6.0.2"
+    "standardx": "^5.0.0",
+    "svelte": "^3.12.1",
+    "svelte-preprocess": "^3.1.1",
+    "updates": "^9.0.0"
   },
   "engines": {
-    "node": ">=11.0.0"
+    "node": ">=12.0.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run format && git add -A :/"
+      "pre-commit": "npm run test:lint && git add -A :/"
     }
   },
-  "main": "dist/app.js",
-  "name": "inc",
+  "name": "inc-site",
   "private": true,
   "scripts": {
-    "build": "gulp",
-    "build:fresh": "gulp fresh-build",
-    "build:production": "gulp production",
-    "clean": "rimraf 'dist/' && rimraf 'production/'",
-    "deploy": "vagrant push",
-    "format": "eslint '**/*.js' --fix --ignore-pattern 'dist' --ignore-pattern 'production'",
-    "start": "npm run build",
-    "test": "run-p test:*",
-    "test:dependencies": "updates -u ./",
+    "build": "sapper build --legacy",
+    "compress": "sass --load-path=node_modules --update sass:static --style compressed",
+    "cy": "run-p --race dev cy:run",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open",
+    "export": "sapper export --legacy",
+    "format": "eslint . --fix",
+    "postinstall": "link-module-alias",
+    "preinstall": "command -v link-module-alias;link-module-alias clean || true",
+    "start": "rm -rf __sapper__;npm i;npm run build;npm run compress;NODE_ENV=production PORT=3003 node __sapper__/build",
+    "test": "run-s test:*",
+    "test:dependencies": "updates --update ./",
     "test:lint": "standardx --verbose | snazzy",
-    "test:sass": "sass-lint --config ./node_modules/@inc/sasslint-config/config.json 'src/sass/**/*.scss' --verbose --no-exit"
+    "test:sass": "sass-lint --config ./node_modules/@inc/sasslint-config/config.json --verbose",
+    "watch": "npm run compress;NODE_ENV=development PORT=3003 run-p watch:*",
+    "watch:app": "sapper dev",
+    "watch:sass": "sass --load-path=node_modules --watch sass:static --style compressed"
   },
   "standardx": {
     "ignore": [
-      "dist",
-      "production"
+      "__sapper__",
+      "static"
     ]
   },
-  "version": "2.1.0"
+  "version": "2019.09.25"
 }
