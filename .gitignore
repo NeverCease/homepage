@@ -1,11 +1,3 @@
 # Files
 .DS_Store
-yarn-error.log
 Thumbs.db
-
-# Folders
-__sapper__
-cypress/screenshots
-node_modules
-src/node_modules/@sapper
-
