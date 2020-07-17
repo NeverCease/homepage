@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 01101001 01101110 01100011 -->
+    <meta charset="utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="author" content="Paul Anthony Webb"/>
+    <meta name="description" content="Ideas Never Cease (!NC) is a one-man shop for all things neat and Internet. Run by Paul Anthony Webb, it began as a company to house his ideas."/>
+    <meta name="keywords" content="!nc, ideas, inc, never cease"/>
+    <meta name="title" content="Ideas Never Cease"/>
+    <meta name="theme-color" content="#010000"/>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="viewport-fit" content="cover"/>
+
+    <meta name="apple-mobile-web-app-title" content="Ideas Never Cease"/>
+    <meta name="application-name" content="Ideas Never Cease"/>
+    <meta name="msapplication-TileColor" content="#010000"/>
+    <meta name="msapplication-TileImage" content="/assets/apple-touch-icon.png"/>
+    <meta name="socii:site" content="inc"/>
+    <meta name="theme-color" content="#010000"/>
+
+    <meta property="og:image" content="/assets/og-image.png"/>
+    <meta property="og:image:height" content="720"/>
+    <meta property="og:image:width" content="1280"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://inc.sh"/>
+
+    <title>Ideas Never Cease ∙ Helping to make the &#039;Net a better place to be</title>
+
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"/>
+    <link rel="mask-icon" href="/assets/favicon.svg" color="#010000"/>
+    <link rel="shortcut icon" href="/assets/favicon.ico"/>
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Karla:400,700,400i,700i"/>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0; padding: 0;
+        box-sizing: inherit;
+      }
+
+      :root {
+        --color-black: #010000;
+        --color-cerulean: #07d0eb;
+        --color-gray: #333;
+        --color-white: #fcfcfc;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 12px;
+        padding-top: 2rem;
+      }
+
+      @media (min-width: 451px) {
+        body {
+          padding-left: 2rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        body {
+          padding-left: 1rem;
+        }
+      }
+
+      /*————— headings */
+      /*————— headings */
+      /*————— headings */
+
+      @media (min-width: 451px) {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      /*————— headings — h2 */
+
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      @media (min-width: 451px) {
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        h2 {
+          font-size: 1.25rem;
+        }
+      }
+
+      /*————— headings — title */
+
+      .title {
+        color: var(--color-gray);
+        letter-spacing: 0.05rem;
+        text-transform: uppercase;
+      }
+
+      /*————— sections */
+      /*————— sections */
+      /*————— sections */
+
+      header {
+        border-bottom: 1px solid var(--color-gray);
+        padding-bottom: 2rem;
+      }
+
+      @media (min-width: 451px) {
+        header {
+          padding-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        header {
+          padding-bottom: 1rem;
+        }
+      }
+
+      /*————— sections — footer */
+
+      footer {
+        border-top: 1px solid var(--color-gray);
+        padding-bottom: 2rem;
+      }
+
+      @media (min-width: 451px) {
+        footer {
+          padding-top: 2rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        footer {
+          padding-top: 1rem;
+        }
+      }
+
+      footer span {
+        color: var(--color-gray);
+      }
+
+      /*————— sections — main */
+
+      main {
+        max-width: 800px;
+        padding-bottom: 1rem;
+      }
+
+      @media (min-width: 451px) and (max-width: 850px) {
+        main {
+          padding-right: 2rem;
+        }
+      }
+
+      @media (min-width: 451px) {
+        main {
+          padding-top: 2rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        main {
+          padding-top: 1rem;
+          padding-right: 1rem;
+        }
+      }
+
+      /*————— copy */
+      /*————— copy */
+      /*————— copy */
+
+      p {
+        letter-spacing: 0.025rem;
+        line-height: 1.33;
+        margin-bottom: 1.5rem;
+      }
+
+      @media (min-width: 451px) {
+        p {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        p {
+          font-size: 1.15rem;
+        }
+      }
+
+      /*————— copy — anchor */
+
+      a {
+        color: inherit;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        color: var(--color-cerulean);
+      }
+
+      /*————— projects */
+      /*————— projects */
+      /*————— projects */
+
+      .table {
+        padding-top: 0.5rem;
+      }
+
+      @media (min-width: 451px) {
+        .table {
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        .table {
+          margin-bottom: 1rem;
+        }
+      }
+
+      /*————— projects — grid */
+
+      @media (min-width: 801px) {
+        .grid {
+          display: table;
+          table-layout: fixed;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .grid:first-of-type {
+          display: none;
+        }
+
+        .grid:nth-child(2) {
+          padding-bottom: 1.25rem;
+        }
+
+        .grid:not(:first-of-type):not(:nth-child(2)) {
+          padding-top: 1rem;
+        }
+      }
+
+      @media (min-width: 451px) and (max-width: 850px) {
+        .grid:not(:first-of-type):not(:nth-child(2)) {
+          padding-bottom: 1.25rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        .grid:not(:first-of-type):not(:nth-child(2)) {
+          padding-bottom: 1rem;
+        }
+      }
+
+      .grid:first-of-type {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+        position: relative;
+      }
+
+      .grid:not(:first-of-type) {
+        border-bottom: 1px solid var(--color-gray);
+        font-size: 1rem;
+      }
+
+      /*————— projects — column */
+
+      .col {
+        cursor: default;
+        overflow: hidden;
+        line-height: 1.33;
+      }
+
+      @media (min-width: 801px) {
+        .col {
+          display: table-cell;
+          padding: 0.75rem 1rem 0.75rem 0;
+          vertical-align: middle;
+        }
+      }
+
+      .col a {
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>inc <small class="title">&middot; ideas never cease</small></h1>
+    </header>
+
+    <main>
+      <h2 class="title">intro</h2>
+      <p><strong>Ideas Never Cease</strong>, a company name and a universal truth. Ideas encompass our lives and everything we do. Why think "outside of the box" when you can <strong>think outside of the sphere</strong> that contains this box? Our mission is simple: to <strong>delight</strong>, <strong>inform</strong>, and <strong>change the world</strong>. And then, <strong>other worlds</strong>. 😁</p>
+
+      <h2 class="title">projects</h2>
+      <section class="table">
+        <div class="grid">
+          <div class="col">name</div>
+          <div class="col">description</div>
+          <div class="col">url</div>
+        </div>
+
+        <div class="grid">
+          <div class="col">Aries</div>
+          <div class="col">Web Browser</div>
+          <div class="col">&mdash;</div>
+        </div>
+
+        <div class="grid">
+          <div class="col">BackOffice</div>
+          <div class="col">Everything you need to run your business</div>
+          <div class="col">&mdash;</div>
+        </div>
+
+        <div class="grid">
+          <div class="col">Beachfront</div>
+          <div class="col">Domain portfolio management</div>
+          <div class="col"><a href="https://beachfront.digital" title="Beachfront, domain portfolio management tool">beachfront.digital</a></div>
+        </div>
+
+        <div class="grid">
+          <div class="col">Chew</div>
+          <div class="col">Analytics you can count on</div>
+          <div class="col"><a href="https://chew.sh" title="Chew, analytics you can count on">chew.sh</a></div>
+        </div>
+
+        <div class="grid">
+          <div class="col">dsgn.</div>
+          <div class="col">Design Services for the Good Natured</div>
+          <div class="col"><a href="https://dsgn.agency" title="dsgn., Design Services for the Good Natured">dsgn.agency</a></div>
+        </div>
+
+        <div class="grid">
+          <div class="col">FRSH×BTS</div>
+          <div class="col">Music production</div>
+          <div class="col">&mdash;</div>
+        </div>
+
+        <div class="grid">
+          <div class="col">hikari</div>
+          <div class="col">MMBN-inspired operating "system"</div>
+          <div class="col"><a href="https://hikar.io" title="hikari, MMBN-inspired operating 'system'">hikar.io</a></div>
+        </div>
+
+        <div class="grid">
+          <div class="col">Pidge</div>
+          <div class="col"><del>IMAP</del> JMAP client</div>
+          <div class="col">&mdash;</div>
+        </div>
+
+        <div class="grid">
+          <div class="col">Socii</div>
+          <div class="col">A better social network</div>
+          <div class="col"><a href="https://socii.network" title="Socii, a better social network">socii.network</a></div>
+        </div>
+
+        <div class="grid">
+          <div class="col">VendoMarket</div>
+          <div class="col">eCommerce platform</div>
+          <div class="col">&mdash;</div>
+        </div>
+
+        <div class="grid">
+          <div class="col">WEÖM</div>
+          <div class="col">Space-centric lifestyle brand</div>
+          <div class="col"><a href="https://weom.space" title="WEÖM, space-centric lifestyle brand">weom.space</a></div>
+        </div>
+      </section>
+
+      <p>Currently, all projects are in maintenance mode while resources are diverted to developing upon the <a href="https://blog.webb.page/2019/a-personal-api" title="Essay about the personal API">personal API/OS</a> concept.</p>
+      <p>Moreso than the above products, ownership of one's own data is far more important and enabling understanding of said importance to the layperson is something to be passionate about.</p>
+    </main>
+
+    <footer>
+      &copy; 1988&mdash;<script>
+      (() => {
+        const x = document.getElementsByTagName("script");
+        const y = x[x.length - 1];
+        const z = document.createTextNode((new Date()).getFullYear());
+
+        y.parentNode.insertBefore(z, y);
+      })();
+    </script><noscript>&infin;</noscript> Ideas Never Cease. All Rights Reserved.<br/>
+    <span>Last updated 2020.07.17</span>
+    </footer>
+  </body>
+</html>

@@ -1,27 +1,9 @@
-# Marketing
+# homepage
 
 > Homepage of Ideas Never Cease
 
 
 
-## Installation
+It's just HTML, CSS, and a lil' JavaScript that degrades gracefully.
 
-```bash
-$ npm i
-```
-
-## Development
-
-```bash
-$ npm run watch
-```
-
-## Production
-
-```bash
-$ npm start
-```
-
-## Note
-
-The Terminal prompt will tell you which port this web app is running on.
+To the point, that's it.
